@@ -31,7 +31,7 @@ export const Route = createFileRoute("/programas/$slug")({
 });
 
 function ProgramDetail() {
-  const { p } = Route.useLoaderData();
+  const { p } = Route.useLoaderData() as { p: Program };
 
   return (
     <article>
