@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as CompararRouteImport } from './routes/comparar'
+import { Route as BecasRouteImport } from './routes/becas'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ProgramasIndexRouteImport } from './routes/programas.index'
 import { Route as ProgramasSlugRouteImport } from './routes/programas.$slug'
@@ -17,6 +18,11 @@ import { Route as ProgramasSlugRouteImport } from './routes/programas.$slug'
 const CompararRoute = CompararRouteImport.update({
   id: '/comparar',
   path: '/comparar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BecasRoute = BecasRouteImport.update({
+  id: '/becas',
+  path: '/becas',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -37,12 +43,14 @@ const ProgramasSlugRoute = ProgramasSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/becas': typeof BecasRoute
   '/comparar': typeof CompararRoute
   '/programas/$slug': typeof ProgramasSlugRoute
   '/programas/': typeof ProgramasIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/becas': typeof BecasRoute
   '/comparar': typeof CompararRoute
   '/programas/$slug': typeof ProgramasSlugRoute
   '/programas': typeof ProgramasIndexRoute
@@ -50,20 +58,28 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/becas': typeof BecasRoute
   '/comparar': typeof CompararRoute
   '/programas/$slug': typeof ProgramasSlugRoute
   '/programas/': typeof ProgramasIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/comparar' | '/programas/$slug' | '/programas/'
+  fullPaths: '/' | '/becas' | '/comparar' | '/programas/$slug' | '/programas/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/comparar' | '/programas/$slug' | '/programas'
-  id: '__root__' | '/' | '/comparar' | '/programas/$slug' | '/programas/'
+  to: '/' | '/becas' | '/comparar' | '/programas/$slug' | '/programas'
+  id:
+    | '__root__'
+    | '/'
+    | '/becas'
+    | '/comparar'
+    | '/programas/$slug'
+    | '/programas/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BecasRoute: typeof BecasRoute
   CompararRoute: typeof CompararRoute
   ProgramasSlugRoute: typeof ProgramasSlugRoute
   ProgramasIndexRoute: typeof ProgramasIndexRoute
@@ -76,6 +92,13 @@ declare module '@tanstack/react-router' {
       path: '/comparar'
       fullPath: '/comparar'
       preLoaderRoute: typeof CompararRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/becas': {
+      id: '/becas'
+      path: '/becas'
+      fullPath: '/becas'
+      preLoaderRoute: typeof BecasRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -104,6 +127,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BecasRoute: BecasRoute,
   CompararRoute: CompararRoute,
   ProgramasSlugRoute: ProgramasSlugRoute,
   ProgramasIndexRoute: ProgramasIndexRoute,
