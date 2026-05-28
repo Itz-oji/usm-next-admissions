@@ -1,9 +1,9 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, Calendar, CheckCircle2, Clock, GraduationCap, MapPin, ShieldCheck, TrendingUp, Users } from "lucide-react";
-import { programs, formatCLP } from "@/data/programs";
+import { programs, formatCLP, type Program } from "@/data/programs";
 
 export const Route = createFileRoute("/programas/$slug")({
-  loader: ({ params }) => {
+  loader: ({ params }): { p: Program } => {
     const p = programs.find((x) => x.slug === params.slug);
     if (!p) throw notFound();
     return { p };
