@@ -9,38 +9,148 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as FechasRouteImport } from './routes/fechas'
+import { Route as ContactoRouteImport } from './routes/contacto'
+import { Route as CompararRouteImport } from './routes/comparar'
+import { Route as BecasRouteImport } from './routes/becas'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ProgramasIndexRouteImport } from './routes/programas.index'
+import { Route as ProgramasSlugRouteImport } from './routes/programas.$slug'
 
+const FechasRoute = FechasRouteImport.update({
+  id: '/fechas',
+  path: '/fechas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactoRoute = ContactoRouteImport.update({
+  id: '/contacto',
+  path: '/contacto',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CompararRoute = CompararRouteImport.update({
+  id: '/comparar',
+  path: '/comparar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BecasRoute = BecasRouteImport.update({
+  id: '/becas',
+  path: '/becas',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProgramasIndexRoute = ProgramasIndexRouteImport.update({
+  id: '/programas/',
+  path: '/programas/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProgramasSlugRoute = ProgramasSlugRouteImport.update({
+  id: '/programas/$slug',
+  path: '/programas/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/becas': typeof BecasRoute
+  '/comparar': typeof CompararRoute
+  '/contacto': typeof ContactoRoute
+  '/fechas': typeof FechasRoute
+  '/programas/$slug': typeof ProgramasSlugRoute
+  '/programas/': typeof ProgramasIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/becas': typeof BecasRoute
+  '/comparar': typeof CompararRoute
+  '/contacto': typeof ContactoRoute
+  '/fechas': typeof FechasRoute
+  '/programas/$slug': typeof ProgramasSlugRoute
+  '/programas': typeof ProgramasIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/becas': typeof BecasRoute
+  '/comparar': typeof CompararRoute
+  '/contacto': typeof ContactoRoute
+  '/fechas': typeof FechasRoute
+  '/programas/$slug': typeof ProgramasSlugRoute
+  '/programas/': typeof ProgramasIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/becas'
+    | '/comparar'
+    | '/contacto'
+    | '/fechas'
+    | '/programas/$slug'
+    | '/programas/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/becas'
+    | '/comparar'
+    | '/contacto'
+    | '/fechas'
+    | '/programas/$slug'
+    | '/programas'
+  id:
+    | '__root__'
+    | '/'
+    | '/becas'
+    | '/comparar'
+    | '/contacto'
+    | '/fechas'
+    | '/programas/$slug'
+    | '/programas/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BecasRoute: typeof BecasRoute
+  CompararRoute: typeof CompararRoute
+  ContactoRoute: typeof ContactoRoute
+  FechasRoute: typeof FechasRoute
+  ProgramasSlugRoute: typeof ProgramasSlugRoute
+  ProgramasIndexRoute: typeof ProgramasIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/fechas': {
+      id: '/fechas'
+      path: '/fechas'
+      fullPath: '/fechas'
+      preLoaderRoute: typeof FechasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contacto': {
+      id: '/contacto'
+      path: '/contacto'
+      fullPath: '/contacto'
+      preLoaderRoute: typeof ContactoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/comparar': {
+      id: '/comparar'
+      path: '/comparar'
+      fullPath: '/comparar'
+      preLoaderRoute: typeof CompararRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/becas': {
+      id: '/becas'
+      path: '/becas'
+      fullPath: '/becas'
+      preLoaderRoute: typeof BecasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,22 +158,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/programas/': {
+      id: '/programas/'
+      path: '/programas'
+      fullPath: '/programas/'
+      preLoaderRoute: typeof ProgramasIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/programas/$slug': {
+      id: '/programas/$slug'
+      path: '/programas/$slug'
+      fullPath: '/programas/$slug'
+      preLoaderRoute: typeof ProgramasSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BecasRoute: BecasRoute,
+  CompararRoute: CompararRoute,
+  ContactoRoute: ContactoRoute,
+  FechasRoute: FechasRoute,
+  ProgramasSlugRoute: ProgramasSlugRoute,
+  ProgramasIndexRoute: ProgramasIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
