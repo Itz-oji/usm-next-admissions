@@ -30,19 +30,13 @@ export function Navbar() {
       className={cn(
         "fixed top-0 inset-x-0 z-50 transition-all duration-300",
         scrolled
-          ? "bg-background/80 backdrop-blur-xl border-b border-border/60 py-2"
-          : "bg-transparent py-4",
+          ? "bg-navbar-blue/60 backdrop-blur-xl border-b border-border/60 py-2"
+          : "bg-navbar-blue py-4",
       )}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 flex items-center justify-between gap-6">
         <Link to="/" className="flex items-center gap-2 group" aria-label="USM Admisión Inicio">
-          <div className="size-9 rounded-lg bg-usm-navy text-white grid place-items-center shadow-[var(--shadow-card)]">
-            <GraduationCap className="size-5" />
-          </div>
-          <div className="leading-tight">
-            <div className="text-sm font-semibold text-foreground">USM</div>
-            <div className="text-[11px] text-muted-foreground -mt-0.5">Admisión Postgrado</div>
-          </div>
+            <img src={scrolled ? "/logo-usm.png" : "/logo-usm_blanco.png"} alt="USM" className="h-8 sm:h-10 md:h-12 w-auto"/>
         </Link>
 
         <nav className="hidden lg:flex items-center gap-1">
@@ -55,8 +49,12 @@ export function Navbar() {
                 className={cn(
                   "px-3 py-2 rounded-md text-sm transition-colors",
                   active
-                    ? "text-foreground font-medium"
-                    : "text-muted-foreground hover:text-foreground",
+                    ? scrolled
+                      ? "text-black font-medium"
+                      : "text-white font-medium"
+                    : scrolled
+                      ? "text-muted-black hover:text-foreground"
+                      : "text-white/80 hover:text-white"
                 )}
               >
                 {l.label}
