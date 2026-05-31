@@ -6,7 +6,7 @@ export type Program = {
   modality: "Presencial" | "Online" | "Híbrido";
   duration: string;
   schedule: string;
-  campus: "Casa Central" | "San Joaquín" | "Vitacura" | "Online" | "Vitacura y Casa Central";
+  campus: "Casa Central" | "San Joaquín" | "Vitacura" | "Online" | "Vitacura o Casa Central" | "Internacional";
   tuition: number; // CLP total
   accreditation: string;
   employability: number; // %
@@ -182,7 +182,7 @@ export const programs: Program[] = [
     modality: "Híbrido",
     duration: "4 semestres",
     schedule: "Weekend",
-    campus: "Vitacura y Casa Central",
+    campus: "Vitacura o Casa Central",
     tuition: 17100000,
     accreditation: "Acreditado AMBA · CNA 5 años",
     employability: 97, //FALTA
@@ -197,18 +197,18 @@ export const programs: Program[] = [
       { semester: "Semestre 4", courses: ["Dirección de Logística y Operaciones", "Dirección Estrategica", "Taller de Innovación & Desing Thinking", "Taller Emprendimiento Tecnológico", "Taller Liderazgo y Habilidades Gerenciales III", "Electivo III", "Actividad Formativa Equivalente II"] },
     ],
     requirements: ["Poseer el grado de Licenciado en disciplinas afines al Programa o un título profesional cuyo nivel, contenido y duración de estudios sean equivalentes a los necesarios para obtener el grado de Licenciado correspondiente", "Mínimo tres años de experiencia profesional"],
-    dates: [
-      { label: "Apertura postulaciones", date: "01 Ago 2025" },
-      { label: "Cierre postulaciones", date: "15 Nov 2025" },
-      { label: "Resultados", date: "10 Ene 2026" },
+    dates: [ 
+      { label: "Apertura postulaciones", date: "01 Jun 2026" },
+      { label: "Cierre postulaciones", date: "15 Sep 2026" },
+      { label: "Resultados", date: "10 Oct 2026" },
     ],
-    faq: [
+    faq: [ //FALTA
       { q: "¿Incluye experiencia internacional?", a: "Sí, con módulos y casos globales." },
     ],
     testimonial: {
-      name: "Claudia Paredes",
-      role: "Gerente Comercial, LATAM",
-      quote: "Excelente combinación de teoría estratégica y aplicación práctica.",
+      name: "Marcelo Fonseca Pino",
+      role: "Gerente General en Sociedad Kinésica Dinamed Salud Cia Ltda.",
+      quote: "Lo que más disfruté del MBA en la Universidad Santa María fue la relación con los compañeros y profesores, así como las intensas reuniones de trabajo semanales, viajando desde distintas ciudades y compartiendo discusiones profundas sobre los casos de estudio entre pizzas, comida china y hamburguesas; esas experiencias de colaboración y debate enriquecieron enormemente mi aprendizaje. Hoy aplico constantemente lo aprendido. Sin duda, el Sello Sansano se siente desde el primer día de universidad y se refuerza con cada clase; al egresar sentí orgullo y satisfacción por todo lo logrado, llevando conmigo un espíritu de disciplina, rigurosidad, ética y compromiso que guía mi desempeño profesional y personal.",
     },
   },
   {
@@ -217,72 +217,34 @@ export const programs: Program[] = [
     area: "Profesional",
     level: "Magíster",
     modality: "Híbrido",
-    duration: "4 semestres",
-    schedule: "Vespertino",
-    campus: "Vitacura",
-    tuition: 9600000,
-    accreditation: "Acreditado CNA 5 años",
-    employability: 95,
-    shortDesc: "Domina arquitecturas digitales, seguridad y gestión de datos empresariales.",
-    description: "Programa para profesionales que lideran la transformación digital en empresas y organizaciones.",
-    career: ["CTO", "IT Manager", "Arquitecto de soluciones"],
-    profile: "Profesionales de TI, ingeniería o ciencias afines con experiencia en proyectos digitales.",
+    duration: "5 semestres",
+    schedule: "Weekend",
+    campus: "San Joaquín",
+    tuition: 13450000,
+    accreditation: "Acreditado CNA 4 años",
+    employability: 95, //FALTA
+    shortDesc: "Domina arquitecturas digitales, seguridad y gestión de datos empresariales.", //FALTA
+    description: "Programa para profesionales que lideran la transformación digital en empresas y organizaciones.", //FALTA
+    career: ["CTO", "IT Manager", "Arquitecto de soluciones"], //FALTA
+    profile: "El Programa está principalmente dirigido a profesionales con formación en ingeniería que aspiran continuar con su perfeccionamiento en tecnologías de información.",
     curriculum: [
-      { semester: "Semestre 1", courses: ["Arquitectura TI", "Seguridad de la información", "Gestión de datos"] },
-      { semester: "Semestre 2", courses: ["Cloud computing", "DevOps", "Gobierno TI"] },
-      { semester: "Semestre 3", courses: ["Analítica avanzada", "IA aplicada", "Electivo"] },
-      { semester: "Semestre 4", courses: ["Tesis", "Seminario tecnológico"] },
+      { semester: "Año 1", courses: ["Sistemas de Información", "Gestión y Evaluación de Proyectos TI", "Gerencia y Gobernanza de TI", "Sistemas de Gestión de Datos", "Analítica de Datos", "Inteligencia Artificial y Aprendizaje Automatico", "Ingeniería y Procesos de Software", "Ingeniería de Requisitos", "Arquitectura de Software", "Redes y Servicios de Comunicación", "Sistemas y Servicios Distribuidos", "Ciberseguridad", "Seminario de Innovación Tecnológica"] },
+      { semester: "Año 2", courses: ["Electivo I", "Electivo II", "Electivo III", "Electivo IV", "Electivo V", "Electivo VI", "Electivo VII", "Electivo VIII", "Electivo IX", "Electivo X", "Electivo XI", "Electivo XII", "Seminario de Investigación Aplicada"] },
+      { semester: "Año 3", courses: ["Proyecto de Tesina", "Seminario de Graduación"] },
     ],
-    requirements: ["Título profesional o técnico superior", "Experiencia en TI preferente"],
-    dates: [
+    requirements: ["Estar en posesión del grado de licenciado en una ingeniería afín a la disciplina, o de un grado académico o título profesional universitario equivalente o superior al exigido, demostrando haber tenido un buen desempeño académico durante sus estudios", "Acreditar al menos tres años de experiencia profesional en el campo de las TI", "Mostrar interés, iniciativa, capacidad intelectual y habilidades acordes con las características y exigencias del Programa", "Dominar el idioma español, considerando que las actividades académicas del Programa se desarrollan mayoritariamente en este idioma; además, demostrar un dominio mínimo del idioma inglés necesario para participar exitosamente en las asignaturas que se dictan en este idioma durante el segundo año"],
+    dates: [ //FALTA
       { label: "Apertura postulaciones", date: "01 Sep 2025" },
       { label: "Cierre postulaciones", date: "10 Dic 2025" },
       { label: "Resultados", date: "15 Ene 2026" },
     ],
-    faq: [
+    faq: [ //FALTA
       { q: "¿Se enseña cloud y ciberseguridad?", a: "Sí, con casos aplicados y prácticas reales." },
     ],
     testimonial: {
-      name: "Nicolás Medina",
-      role: "Arquitecto de Soluciones, Claro Chile",
-      quote: "Me ayudó a estructurar la estrategia TI de mi equipo.",
-    },
-  },
-  {
-    slug: "master-globalisation-european-integration",
-    name: "Master Degree in Economics of Globalisation and European Integration",
-    area: "Profesional",
-    level: "Magíster",
-    modality: "Híbrido",
-    duration: "4 semestres",
-    schedule: "Vespertino",
-    campus: "Vitacura",
-    tuition: 12200000,
-    accreditation: "Acreditado CNA 5 años",
-    employability: 94,
-    shortDesc: "Economía global y europea con enfoque en integración de mercados y políticas.",
-    description: "Formación internacional que combina economía, comercio y gobernanza para entornos globales.",
-    career: ["Analista económico", "Consultor de comercio", "Asesor de políticas"],
-    profile: "Economistas y analistas interesados en mercados internacionales y políticas públicas.",
-    curriculum: [
-      { semester: "Semestre 1", courses: ["Economía internacional", "Política comercial", "Macroeconomía europea"] },
-      { semester: "Semestre 2", courses: ["Integración regional", "Regulación financiera", "Electivo internacional"] },
-      { semester: "Semestre 3", courses: ["Mercados emergentes", "Sostenibilidad global", "Seminario"] },
-      { semester: "Semestre 4", courses: ["Tesis", "Proyecto aplicado"] },
-    ],
-    requirements: ["Título profesional", "Concentración de notas", "Carta de motivación"],
-    dates: [
-      { label: "Apertura postulaciones", date: "01 Oct 2025" },
-      { label: "Cierre postulaciones", date: "20 Dic 2025" },
-      { label: "Resultados", date: "10 Ene 2026" },
-    ],
-    faq: [
-      { q: "¿Incluye componentes internacionales?", a: "Sí, con módulos comparativos y estudios de caso de Europa." },
-    ],
-    testimonial: {
-      name: "Laura Gómez",
-      role: "Economista Senior, Santander",
-      quote: "La perspectiva global del programa fue clave para mi posición estratégica.",
+      name: "Roberto Schiaffino",
+      role: "Jefe de Proyectos TIC",
+      quote: "La experiencia de estudiar el MTI en la USM fue reencontrarme con el sello Sansano, de excelencia y liderazgo en el conocimiento y la investigación, a la vez de vivir la fraternidad y cercanía con profesores, alumnos y staff del programa. Habiendo finalizado el plan de estudios, tengo la certeza que las competencias técnicas y de gestión que adquirí en el postgrado, brindarán solidez y confianza a mi desempeño profesional, permitiéndome aportar de forma relevante al desarrollo tecnológico de las organizaciones donde me corresponda participar.",
     },
   },
   {
@@ -294,26 +256,26 @@ export const programs: Program[] = [
     duration: "4 semestres",
     schedule: "Vespertino",
     campus: "Casa Central",
-    tuition: 10800000,
-    accreditation: "Acreditado CNA 5 años",
-    employability: 93,
-    shortDesc: "Profundiza en investigación y técnicas avanzadas de ingeniería civil.",
-    description: "Programa que integra métodos científicos con desarrollo de proyectos civiles complejos.",
-    career: ["Investigador civil", "Consultor estructural", "Gerente de proyectos"],
-    profile: "Ingenieros civiles interesados en investigación y docencia avanzada.",
+    tuition: 14220000,
+    accreditation: "Acreditado CNA 6 años",
+    employability: 93, //FALTA
+    shortDesc: "Profundiza en investigación y técnicas avanzadas de ingeniería civil.", //FALTA
+    description: "Programa que integra métodos científicos con desarrollo de proyectos civiles complejos.", //FALTA
+    career: ["Investigador civil", "Consultor estructural", "Gerente de proyectos"], //FALTA
+    profile: "Orientado a licenciados y profesionales de la Ingeniería Civil (o disciplinas afines) que posean una sólida base técnica, capacidad analítica y una fuerte motivación por la innovación y la investigación. El candidato debe demostrar interés en adquirir conocimientos avanzados para diseñar y aplicar soluciones novedosas a problemas complejos, con el compromiso de aportar al desarrollo de la disciplina y generar un impacto positivo y beneficioso para la sociedad.",
     curriculum: [
-      { semester: "Semestre 1", courses: ["Mecánica de suelos avanzada", "Hidráulica avanzada", "Modelación matemática"] },
-      { semester: "Semestre 2", courses: ["Diseño estructural avanzado", "Gestión de riesgos", "Seminario de investigación"] },
-      { semester: "Semestre 3", courses: ["Ingeniería sísmica", "Construcción sustentable", "Electivo"] },
-      { semester: "Semestre 4", courses: ["Tesis", "Seminario de tesis"] },
+      { semester: "Semestre 1", courses: ["Principios de Ciencias de la Ingeniería Civil", "Electivo de Área I", "Electivo de Área II", "Seminario de Ciencias I"] },
+      { semester: "Semestre 2", courses: ["Electivo de Área III", "Seminario de Ciencias II"] },
+      { semester: "Semestre 3", courses: ["Electivo Libre", "Seminario de Tesis I"] },
+      { semester: "Semestre 4", courses: ["Seminario de Tesis II"] },
     ],
-    requirements: ["Título de ingeniería civil", "Carta de motivación", "Entrevista"],
-    dates: [
+    requirements: ["Grado de Licenciado en Ciencias de la Ingeniería Civil o título profesional universitario equivalente en disciplinas afines"],
+    dates: [ //FALTA
       { label: "Apertura postulaciones", date: "01 Sep 2025" },
       { label: "Cierre postulaciones", date: "15 Dic 2025" },
       { label: "Resultados", date: "05 Ene 2026" },
     ],
-    faq: [
+    faq: [ //FALTA
       { q: "¿El programa es investigativo?", a: "Sí, el énfasis está en investigación y publicaciones técnicas." },
     ],
     testimonial: {
@@ -613,9 +575,9 @@ export const programs: Program[] = [
       { q: "¿Puedo hacer investigación en física aplicada?", a: "Sí, con foco en aplicaciones industriales y tecnológicas." },
     ],
     testimonial: {
-      name: "Barbara Cifuentes",
-      role: "Investigadora, ESO Chile",
-      quote: "Muy buena base para investigación avanzada en física.",
+      name: "Marcelo Fonseca Pino",
+      role: "Gerente General en Sociedad Kinésica Dinamed Salud Cia Ltda.",
+      quote: "Lo que más disfruté del MBA en la Universidad Santa María fue la relación con los compañeros y profesores, así como las intensas reuniones de trabajo semanales, viajando desde distintas ciudades y compartiendo discusiones profundas sobre los casos de estudio entre pizzas, comida china y hamburguesas; esas experiencias de colaboración y debate enriquecieron enormemente mi aprendizaje. Hoy aplico constantemente lo aprendido. Sin duda, el Sello Sansano se siente desde el primer día de universidad y se refuerza con cada clase; al egresar sentí orgullo y satisfacción por todo lo logrado, llevando conmigo un espíritu de disciplina, rigurosidad, ética y compromiso que guía mi desempeño profesional y personal.",
     },
   },
   {
