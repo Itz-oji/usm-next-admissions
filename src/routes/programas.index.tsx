@@ -16,9 +16,9 @@ export const Route = createFileRoute("/programas/")({
   component: ProgramsPage,
 });
 
-const levels = ["Todos", "Magíster", "Postgrado", "Especialización", "Continuidad"];
+const levels = ["Todos", "Magíster", "Doctorado", "Postgrado", "Especialización", "Continuidad"];
 const modalities = ["Todas", "Presencial", "Online", "Híbrido"];
-const areas = ["Todas", "Ingeniería", "Negocios", "Tecnología", "Ciencias", "Industrial"];
+const areas = ["Todas", "Científico-Tecnológicos", "Profesional"];
 
 function ProgramsPage() {
   const [q, setQ] = useState("");
