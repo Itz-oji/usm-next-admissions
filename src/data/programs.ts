@@ -6,7 +6,7 @@ export type Program = {
   modality: "Presencial" | "Online" | "Híbrido";
   duration: string;
   schedule: string;
-  campus: "Casa Central" | "San Joaquín" | "Vitacura" | "Online";
+  campus: "Casa Central" | "San Joaquín" | "Vitacura" | "Online" | "Vitacura y Casa Central";
   tuition: number; // CLP total
   accreditation: string;
   employability: number; // %
@@ -27,33 +27,33 @@ export const programs: Program[] = [
     name: "Magíster en Ingeniería Industrial",
     area: "Profesional",
     level: "Magíster",
-    modality: "Presencial",
+    modality: "Híbrido",
     duration: "4 semestres",
-    schedule: "Vespertino",
-    campus: "Casa Central",
-    tuition: 11200000,
+    schedule: "Weekend",
+    campus: "Vitacura",
+    tuition: 14300000,
     accreditation: "Acreditado CNA 5 años",
-    employability: 94,
-    shortDesc: "Optimización, gestión y analítica para industrias de clase mundial.",
+    employability: 94, // FALTA
+    shortDesc: "Optimización, gestión y analítica para industrias de clase mundial.",  // FALTA
     description:
-      "Forma especialistas capaces de liderar proyectos de mejora continua, supply chain y transformación operacional.",
-    career: ["Gerente de Operaciones", "Consultor", "Supply Chain Lead"],
+      "Forma especialistas capaces de liderar proyectos de mejora continua, supply chain y transformación operacional.", // FALTA
+    career: ["Gerente de Operaciones", "Consultor", "Supply Chain Lead"], // FALTA
     profile: "Ingenieros y profesionales con orientación cuantitativa.",
     curriculum: [
-      { semester: "Semestre 1", courses: ["Investigación de operaciones", "Estadística", "Economía"] },
-      { semester: "Semestre 2", courses: ["Supply chain", "Simulación", "Gestión de proyectos"] },
-      { semester: "Semestre 3", courses: ["Lean & Six Sigma", "Analytics", "Electivo"] },
-      { semester: "Semestre 4", courses: ["Tesis", "Seminario"] },
+      { semester: "Semestre 1", courses: ["Modelos de Optimización y Métodos Estadísticos", "Taller de Creatividad I", "Fundamentos para la toma de decisiones", "Gestión de Operaciones y Supply Chain Management", "Fundamentos de Dirección Financiera", "Ingeniería de Mercado"] },
+      { semester: "Semestre 2", courses: ["Modelos para la captura de valor", "Taller de Creatividad II", "Lean Management", "Gestión de Operaciones en Industria de Servicios", "Dirección y Prospectiva Estratégica"] },
+      { semester: "Semestre 3", courses: ["Valorización de Activos", "Simulación de Mercados", "Sustentabilidad Energética", "Gestión de Activos Físicos y Life Cycle Management", "Taller de Liderazgo Organizacional y Gestión de Cambio", "Gestión de Proyectos (PM)"] },
+      { semester: "Semestre 4", courses: ["Gestión de Riesgo Operacional", "Gestión del Talento Humano", "Comunicación para Líderes", "Gestión de Innovación Tecnológica", "Negociación", "Seminario de Ingeniería Industrial", "Seminario de Graduación"] },
     ],
-    requirements: ["Título de ingeniería o equivalente", "Entrevista", "Concentración de notas"],
-    dates: [
+    requirements: ["Experiencia profesional mínima de 2 años", "Grado de Licenciado", "CV actualizado", "CI vigente por ambos lados", "Certificado de notas", "Certificado de Título", "Carta motivación", "2 Cartas de recomendación (formato USM)"],
+    dates: [  // FALTA
       { label: "Apertura postulaciones", date: "01 Sep 2025" },
       { label: "Cierre postulaciones", date: "15 Dic 2025" },
       { label: "Resultados", date: "05 Ene 2026" },
       { label: "Matrícula", date: "10 - 24 Ene 2026" },
     ],
-    faq: [{ q: "¿Hay modalidad online?", a: "No, este programa es 100% presencial en Valparaíso." }],
-    testimonial: {
+    faq: [{ q: "¿Hay modalidad online?", a: "No, este programa es 100% presencial en Valparaíso." }],  // FALTA
+    testimonial: {  // FALTA
       name: "María Soto",
       role: "Gerente de Operaciones, CCU",
       quote: "Las herramientas que aprendí las apliqué desde el primer mes.",
@@ -64,37 +64,37 @@ export const programs: Program[] = [
     name: "Magíster en Economía Energética",
     area: "Profesional",
     level: "Magíster",
-    modality: "Híbrido",
+    modality: "Presencial",
     duration: "4 semestres",
-    schedule: "Vespertino",
-    campus: "Casa Central",
-    tuition: 10200000,
+    schedule: "Weekend",
+    campus: "Vitacura",
+    tuition: 15000000,
     accreditation: "Acreditado CNA 5 años",
-    employability: 93,
-    shortDesc: "Economía aplicada al sector energético con foco en políticas públicas y proyectos sustentables.",
+    employability: 93, // FALTA
+    shortDesc: "Economía aplicada al sector energético con foco en políticas públicas y proyectos sustentables.", // FALTA
     description:
-      "Formación especializada para analizar mercados energéticos, regulaciones y modelos de inversión sostenible.",
-    career: ["Analista energético", "Consultor en políticas públicas", "Gerente de proyectos energéticos"],
-    profile: "Economistas, ingenieros y profesionales afines interesados en el sector energía.",
+      "Formación especializada para analizar mercados energéticos, regulaciones y modelos de inversión sostenible.", // FALTA
+    career: ["Analista energético", "Consultor en políticas públicas", "Gerente de proyectos energéticos"], // FALTA
+    profile: "El programa está orientado a profesionales de la ingeniería, gestión, leyes, economía y arquitectura vinculados al sector energético o de alto consumo que buscan especializarse para optimizar su desempeño técnico y estratégico.",
     curriculum: [
-      { semester: "Semestre 1", courses: ["Economía de la energía", "Regulación energética", "Modelos financieros"] },
-      { semester: "Semestre 2", courses: ["Mercados eléctricos", "Políticas públicas", "Evaluación de proyectos"] },
-      { semester: "Semestre 3", courses: ["Transición energética", "Financiamiento verde", "Electivo"] },
-      { semester: "Semestre 4", courses: ["Tesis", "Seminario de investigación"] },
+      { semester: "Semestre 1", courses: ["Tecnologías de la Energía", "Economía de la Energía", "Evaluación de Proyectos Energéticos", "Energía Sostenible"] },
+      { semester: "Semestre 2", courses: ["Infraestructura de la Industria Eléctrica", "Regulación del Sector Energía", "Industria de los Combustibles", "Energías Renovables"] },
+      { semester: "Semestre 3", courses: ["Mercado de la Industria Eléctrica ", "Regulación del Sector Eléctrico", "Eficiencia Energética", "Gestión de la Energía", "Propuesta tema de Tesina"] },
+      { semester: "Semestre 4", courses: ["Financiamiento de Proyectos Energéticos", "Modelos de Negocios Energéticos", "Seminarios: Tópicos de Actualidad", "Tesina de grado"] },
     ],
-    requirements: ["Título profesional o licenciatura", "Concentración de notas", "Carta de motivación"],
+    requirements: ["Haber obtenido el grado de licenciado u otro grado académico o título profesional universitario, cuyo nivel y contenido de estudios sean equivalentes a los necesarios para obtener el grado de licenciado exigido", "Poseer como mínimo 3 años de experiencia profesional", "Se recomienda como requisito deseable, pero no excluyente, estar en posesión de un nivel intermedio (Nivel B1) del idioma de inglés"],
     dates: [
-      { label: "Apertura postulaciones", date: "15 Sep 2025" },
-      { label: "Cierre postulaciones", date: "15 Dic 2025" },
-      { label: "Resultados", date: "10 Ene 2026" },
+      { label: "Apertura postulaciones", date: "27 Nov 2025" },
+      { label: "Cierre postulaciones", date: "11 May 2026" },
+      { label: "Resultados", date: "17 May 2026" },
     ],
     faq: [
-      { q: "¿Incluye análisis de proyectos de energía renovable?", a: "Sí, con casos chilenos y regionales." },
+      { q: "¿Incluye análisis de proyectos de energía renovable?", a: "Sí, con casos chilenos y regionales." }, // FAlta
     ],
     testimonial: {
-      name: "Ana Morales",
-      role: "Consultora Energética, ENEL",
-      quote: "Entender la economía detrás de la energía renovable cambió mi forma de liderar proyectos.",
+      name: "Francisco Barros",
+      role: "Ingeniero Senior de Comercializacion, ENGIE Energia Chile",
+      quote: "Es bastante exigente que hace ser mas interesante el magister.",
     },
   },
   {
@@ -103,36 +103,37 @@ export const programs: Program[] = [
     area: "Profesional",
     level: "Magíster",
     modality: "Presencial",
-    duration: "4 semestres",
-    schedule: "Vespertino",
-    campus: "Casa Central",
-    tuition: 9800000,
-    accreditation: "Acreditado CNA 5 años",
+    duration: "5 semestres",
+    schedule: "Weekend",
+    campus: "Vitacura",
+    tuition: 18180000,
+    accreditation: "Acreditado CNA 4 años",
     employability: 92,
-    shortDesc: "Gestiona activos industriales con técnicas avanzadas de mantenimiento y confiabilidad.",
-    description:
+    shortDesc: "Gestiona activos industriales con técnicas avanzadas de mantenimiento y confiabilidad.",  // FALTA
+    description:  // FALTA
       "Programa práctico que une gestión de activos, mantenimiento predictivo y optimización de operaciones.",
-    career: ["Gerente de Mantenimiento", "Ingeniero de Confiabilidad", "Coordinador de Activos"],
-    profile: "Ingenieros mecánicos, industriales y eléctricos interesados en operaciones y mantenimiento.",
+    career: ["Gerente de Mantenimiento", "Ingeniero de Confiabilidad", "Coordinador de Activos"], // FALTA
+    profile: "Dirigido a ingenieros en áreas de operaciones, mantenimiento o gerencia, el programa exige un grado de licenciado o título equivalente, mínimo dos años de experiencia profesional y competencias clave en trabajo en equipo y análisis.",
     curriculum: [
-      { semester: "Semestre 1", courses: ["Gestión de activos", "Mantenimiento industrial", "Análisis de fallas"] },
-      { semester: "Semestre 2", courses: ["Confiabilidad", "IoT para mantenimiento", "Gestión de proyectos"] },
-      { semester: "Semestre 3", courses: ["Estrategias predictivas", "Benchmarking", "Electivo"] },
-      { semester: "Semestre 4", courses: ["Tesis", "Seminario de mejora continua"] },
+      { semester: "Semestre 1", courses: ["Evaluación de Proyectos", "Probabilidades y Estadística", "Gestión Estratégica y Modelo de Negocios", "Ingeniería en Confiabilidad I - RAM", "Valoralización de Activos e Indicadores de Gestión Financiera"] },
+      { semester: "Semestre 2", courses: ["Gestión de Calidad Total", "Planificación y Programación de Mantenimiento", "Gestión de operaciones", "Ingeniería en Confiabilidad II - Estrategias de Mantenimiento", "Introducción a la Gestión de Activos"] },
+      { semester: "Semestre 3", courses: ["Logística Empresarial", "Sistemas Informáticos de Mantenimiento", "Desarrollo Organizacional y Liderazgo", "Ingeniería en Confiabilidad III - Análisis de Fallas y ACR", "Electivo I"] },
+      { semester: "Semestre 4", courses: ["Gestión de Procesos Industriales", "Project Management", "Ingeniería en Confiabilidad IV - Técnicas de Auditoría y Benchmarking Aplicables a la Gestión de Activos", "Electivo 2", "Seminario de Graduación"] },
+      { semester: "Semestre 5", courses: ["Seminario de Graduación"] },
     ],
-    requirements: ["Título de ingeniería o técnico superior", "Entrevista", "Concentración de notas"],
-    dates: [
+    requirements: ["Grado de Licenciado en áreas de la Ingeniería o título profesional cuyo nivel y duración de estudios sean equivalentes a los necesarios para obtener el grado de Licenciado correspondiente", "Mínimo 2 años de experiencia profesional"],
+    dates: [ //FALTA
       { label: "Apertura postulaciones", date: "01 Oct 2025" },
       { label: "Cierre postulaciones", date: "20 Dic 2025" },
       { label: "Resultados", date: "15 Ene 2026" },
     ],
-    faq: [
+    faq: [ // FALTA
       { q: "¿El programa enseña mantenimiento predictivo?", a: "Sí, incluye herramientas digitales y métricas clave." },
     ],
     testimonial: {
-      name: "Javier Torres",
-      role: "Gerente de Mantenimiento, SQM",
-      quote: "Aplicamos las técnicas del magíster desde la primera semana en mi planta.",
+      name: "Andrés Noriega",
+      role: "Ingeniero en Confiabilidad y Calidad, Guacolda Energía, AES Gener",
+      quote: "Inicié el camino cursando el Diplomado, la calidad de los profesores es indiscutible, fue tanto lo que aprendí que no lo dudé, así que decidí continuar con el Magíster, si bien requeriría un mayor esfuerzo, al ser de región, puedo decir sin dudarlo que valió la pena.",
     },
   },
   {
@@ -140,37 +141,37 @@ export const programs: Program[] = [
     name: "Magíster en Gestión del Agua – Master of Water Management",
     area: "Profesional",
     level: "Magíster",
-    modality: "Híbrido",
+    modality: "Presencial",
     duration: "4 semestres",
-    schedule: "Vespertino",
-    campus: "Casa Central",
-    tuition: 10400000,
-    accreditation: "Acreditado CNA 5 años",
-    employability: 94,
-    shortDesc: "Aborda la gobernanza, gestión y tecnología del agua con perspectiva global.",
-    description:
+    schedule: "Weekend",
+    campus: "Vitacura",
+    tuition: 14610000,
+    accreditation: "Acreditado CNA 6 años",
+    employability: 94, //FALTA
+    shortDesc: "Aborda la gobernanza, gestión y tecnología del agua con perspectiva global.", // FALTA
+    description: // FALTA
       "Formación para enfrentar desafíos hídricos urbanos e industriales con un enfoque de sostenibilidad.",
-    career: ["Consultor hídrico", "Gerente de recursos hídricos", "Especialista en saneamiento"],
-    profile: "Ingenieros civiles, ambientales y profesionales afines con interés en recursos hídricos.",
+    career: ["Consultor hídrico", "Gerente de recursos hídricos", "Especialista en saneamiento"], // FALTA
+    profile: "Profesionales con experiencia en la industria del agua motivados a asumir futuras labores de dirección, planificación y gestión en el sector.",
     curriculum: [
-      { semester: "Semestre 1", courses: ["Hidrología", "Economía del agua", "Gestión de cuencas"] },
-      { semester: "Semestre 2", courses: ["Política hídrica", "Tecnologías de tratamiento", "Sistemas de riego"] },
-      { semester: "Semestre 3", courses: ["Planificación estratégica", "Modelos de gestión", "Electivo internacional"] },
-      { semester: "Semestre 4", courses: ["Tesis", "Seminario de proyectos"] },
+      { semester: "Semestre 1", courses: ["Gestión y Planificación de los Recursos Hidricos", "Evaluación de los Recursos", "Gestión de la Depuración y la Reutilización", "Gestión de la Capacitación y Tratamiento de Aguas", "Planificación y Dirección Estratégica"] },
+      { semester: "Semestre 2", courses: ["Finanzas y Desarrollo de Negocios", "Gobernanza y Economía del Agua", "Gestión de Redes", "Sistema de Gestión", "Gestión del Sistema Pluvial"] },
+      { semester: "Semestre 3", courses: ["Eficiencia Hídrica", "Riesgo y Conflictos en la Gestión de los Recursos", "Gestión de Clientes", "Innovación y Gestión de Proyectos"] },
+      { semester: "Semestre 4", courses: ["Tesina"] },
     ],
-    requirements: ["Título profesional o licenciatura", "Entrevista", "Carta de motivación"],
-    dates: [
+    requirements: ["Grado de Licenciado en Ciencias de la Ingeniería, o del título profesional de ingeniero, o profesionales de carreras universitarias de 5 años o más", "Mínimo 3 años de experiencia profesional"],
+    dates: [ // FALTA
       { label: "Apertura postulaciones", date: "15 Sep 2025" },
       { label: "Cierre postulaciones", date: "10 Dic 2025" },
       { label: "Resultados", date: "05 Ene 2026" },
     ],
-    faq: [
+    faq: [ // FALTA
       { q: "¿Incluye prácticas en terreno?", a: "Sí, con estudios de casos en cuencas y plantas de tratamiento." },
     ],
     testimonial: {
-      name: "Valentina Álvarez",
-      role: "Especialista Hídrico, Aguas Andinas",
-      quote: "Un excelente programa para quienes trabajan con recursos críticos como el agua.",
+      name: "Nibaldo Gatica",
+      role: "Alumno Magíster en Gestión del Agua",
+      quote: "Muy buenos profesores, pedagociamente hablando, con un conocimiento importante del mundo laboral.",
     },
   },
   {
@@ -178,22 +179,24 @@ export const programs: Program[] = [
     name: "MBA-Magister en Gestión Empresarial",
     area: "Profesional",
     level: "Magíster",
-    modality: "Presencial",
-    duration: "5 semestres",
-    schedule: "Vespertino y sábados",
-    campus: "Vitacura",
-    tuition: 19200000,
-    accreditation: "Acreditado AMBA · CNA 7 años",
-    employability: 97,
-    shortDesc: "Desarrolla habilidades de liderazgo y gestión con enfoque internacional.",
-    description: "MBA orientado a la gestión empresarial moderna y la competitividad global.",
-    career: ["Gerente General", "Director de Innovación", "Consultor Empresarial"],
-    profile: "Profesionales con experiencia y deseo de asumir roles estratégicos empresariales.",
+    modality: "Híbrido",
+    duration: "4 semestres",
+    schedule: "Weekend",
+    campus: "Vitacura y Casa Central",
+    tuition: 17100000,
+    accreditation: "Acreditado AMBA · CNA 5 años",
+    employability: 97, //FALTA
+    shortDesc: "Desarrolla habilidades de liderazgo y gestión con enfoque internacional.", //FALTA
+    description: "MBA orientado a la gestión empresarial moderna y la competitividad global.", // FALTA
+    career: ["Gerente General", "Director de Innovación", "Consultor Empresarial"], //FALTA
+    profile: "Orientado a profesionales y emprendedores del área de negocios y gestión con visión de liderazgo, motivados a asumir un rol protagónico en la administración y desarrollo de empresas según las altas exigencias del mercado actual.",
     curriculum: [
-      { semester: "Año 1", courses: ["Estrategia", "Finanzas avanzadas", "Marketing competitivo", "Liderazgo"] },
-      { semester: "Año 2", courses: ["Innovación", "Gobierno corporativo", "Electivo internacional", "Capstone"] },
+      { semester: "Semestre 1", courses: ["Administración", "Contabilidad", "Microeconomia", "Métodos Cuantitativos para la Gestión", "Sustentabilidad y Economía Circular", "Ética en los Negocios"] },
+      { semester: "Semestre 2", courses: ["Dirección Personas y Organizaciones", "Dirección Financiera", "Entorno Económico Global", "Business Analytics", "Taller Liderazgo y Habilidades Gerenciales I", "Electivo I"] },
+      { semester: "Semestre 3", courses: ["Dirección de Marketing", "Sistema de Control y Gobiernos Corporativos", "Mercado y Estrategia", "Negocios Digitales", "Taller Liderazgo y Habilidades Gerenciales II", "Electivo II", "Actividad Formativa Equivalente I"] },
+      { semester: "Semestre 4", courses: ["Dirección de Logística y Operaciones", "Dirección Estrategica", "Taller de Innovación & Desing Thinking", "Taller Emprendimiento Tecnológico", "Taller Liderazgo y Habilidades Gerenciales III", "Electivo III", "Actividad Formativa Equivalente II"] },
     ],
-    requirements: ["Título profesional", "2+ años de experiencia laboral", "Entrevista"],
+    requirements: ["Poseer el grado de Licenciado en disciplinas afines al Programa o un título profesional cuyo nivel, contenido y duración de estudios sean equivalentes a los necesarios para obtener el grado de Licenciado correspondiente", "Mínimo tres años de experiencia profesional"],
     dates: [
       { label: "Apertura postulaciones", date: "01 Ago 2025" },
       { label: "Cierre postulaciones", date: "15 Nov 2025" },
