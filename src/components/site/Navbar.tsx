@@ -5,7 +5,6 @@ import { cn } from "@/lib/utils";
 
 const links = [
   { to: "/programas", label: "Programas" },
-  { to: "/comparar", label: "Comparar" },
   { to: "/becas", label: "Becas y financiamiento" },
   { to: "/fechas", label: "Fechas importantes" },
   { to: "/contacto", label: "Contacto" },

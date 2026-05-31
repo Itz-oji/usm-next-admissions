@@ -57,7 +57,7 @@ function Home() {
               </span>
             </h1>
             <p className="mt-5 text-lg text-muted-foreground max-w-2xl">
-              Magísteres, diplomados y especializaciones de la USM. Compara, simula
+              Magísteres, diplomados y especializaciones de la USM. Simula
               tu inversión y postula en minutos — sin perderte entre páginas.
             </p>
 

@@ -3,34 +3,22 @@ import { GraduationCap } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="mt-32 border-t border-border bg-secondary/40">
+    <footer className="mt-32 border-t border-border bg-footer-blue">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 py-16 grid gap-12 md:grid-cols-4">
-        <div className="md:col-span-2">
-          <div className="flex items-center gap-2 mb-4">
-            <div className="size-9 rounded-lg bg-usm-navy text-white grid place-items-center">
-              <GraduationCap className="size-5" />
-            </div>
-            <div className="leading-tight">
-              <div className="font-semibold">Universidad Técnica Federico Santa María</div>
-              <div className="text-xs text-muted-foreground">Admisión Postgrado · Magíster · Especializaciones</div>
-            </div>
-          </div>
-          <p className="text-sm text-muted-foreground max-w-md">
-            Más de 90 años formando profesionales que transforman la industria, la ciencia y la sociedad.
-          </p>
+        <div className="flex items-center gap-2 mb-4">
+          <img src="/sello-acreditacion-2028.png" alt="USM" className="h-68 sm:h-76 md:h-84 w-auto"/>
         </div>
-        <div>
-          <div className="text-sm font-semibold mb-3">Explorar</div>
-          <ul className="space-y-2 text-sm text-muted-foreground">
+        <div className="col-2">
+          <div className="text-white text-2xl font-bold mb-4">Explorar</div>
+          <ul className="mb-4 text-white text-sm text-muted-foreground">
             <li><Link to="/programas" className="hover:text-foreground">Programas</Link></li>
-            <li><Link to="/comparar" className="hover:text-foreground">Comparar</Link></li>
             <li><Link to="/becas" className="hover:text-foreground">Becas</Link></li>
             <li><Link to="/fechas" className="hover:text-foreground">Fechas</Link></li>
           </ul>
         </div>
         <div>
-          <div className="text-sm font-semibold mb-3">Contacto</div>
-          <ul className="space-y-2 text-sm text-muted-foreground">
+          <div className="text-white text-2xl font-bold mb-4">Contacto</div>
+          <ul className="space-y-2 text-white text-sm text-muted-foreground">
             <li>admision.postgrado@usm.cl</li>
             <li>+56 32 265 4000</li>
             <li>Valparaíso · Santiago · Online</li>
