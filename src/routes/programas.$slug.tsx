@@ -1,5 +1,13 @@
+"use client";
+
+import * as React from "react";
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, Calendar, CheckCircle2, Clock, GraduationCap, MapPin, ShieldCheck, TrendingUp, Users } from "lucide-react";
+import { useForm } from "react-hook-form";
+import { Dialog, DialogClose, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
 import { programs, formatCLP, type Program } from "@/data/programs";
 
 export const Route = createFileRoute("/programas/$slug")({
@@ -30,8 +38,49 @@ export const Route = createFileRoute("/programas/$slug")({
   component: ProgramDetail,
 });
 
+type ApplicationFormValues = {
+  program: string;
+  fullName: string;
+  email: string;
+  phone: string;
+  degree: string;
+  motivation: string;
+};
+
 function ProgramDetail() {
   const { p } = Route.useLoaderData() as { p: Program };
+  const [open, setOpen] = React.useState(false);
+  const [submitted, setSubmitted] = React.useState(false);
+
+  const form = useForm<ApplicationFormValues>({
+    defaultValues: {
+      program: p.name,
+      fullName: "",
+      email: "",
+      phone: "",
+      degree: "Pregrado",
+      motivation: "",
+    },
+  });
+
+  const onSubmit = (values: ApplicationFormValues) => {
+    console.log("Solicitud de postulación:", values);
+    setSubmitted(true);
+  };
+
+  React.useEffect(() => {
+    if (!open) {
+      setSubmitted(false);
+      form.reset({
+        program: p.name,
+        fullName: "",
+        email: "",
+        phone: "",
+        degree: "Pregrado",
+        motivation: "",
+      });
+    }
+  }, [open, p.name, form]);
 
   return (
     <article>
@@ -65,13 +114,127 @@ function ProgramDetail() {
               <div className="text-xs text-muted-foreground">Arancel total</div>
               <div className="text-3xl font-semibold text-foreground">{formatCLP(p.tuition)}</div>
               <div className="text-xs text-muted-foreground mt-1">Becas y financiamiento disponibles</div>
-              <Link
-                to="/programas/$slug"
-                params={{ slug: p.slug }}
-                className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-usm-red px-5 py-3 text-sm font-medium text-white shadow-[var(--shadow-glow)] hover:brightness-110 transition"
-              >
-                Postula aquí
-              </Link>
+              <Dialog open={open} onOpenChange={setOpen}>
+                <DialogTrigger asChild>
+                  <button
+                    type="button"
+                    className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-usm-red px-5 py-3 text-sm font-medium text-white shadow-[var(--shadow-glow)] hover:brightness-110 transition"
+                  >
+                    Postula aquí
+                  </button>
+                </DialogTrigger>
+                <DialogContent>
+                  <DialogHeader>
+                    <DialogTitle>Postulación a {p.name}</DialogTitle>
+                    <DialogDescription>Completa estos datos para iniciar tu postulación al programa.</DialogDescription>
+                  </DialogHeader>
+
+                  {submitted ? (
+                    <div className="space-y-6 pt-4">
+                      <div className="rounded-2xl border border-border bg-secondary/10 p-5 text-sm text-muted-foreground">
+                        ¡Gracias! Hemos recibido tu solicitud de postulación. Nuestro equipo de admisión te contactará pronto.
+                      </div>
+                      <div className="flex justify-end gap-2">
+                        <button
+                          type="button"
+                          onClick={() => setOpen(false)}
+                          className="inline-flex h-10 items-center justify-center rounded-md border border-border px-4 py-2 text-sm font-medium hover:bg-secondary"
+                        >
+                          Cerrar
+                        </button>
+                      </div>
+                    </div>
+                  ) : (
+                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5 pt-4">
+                      <input type="hidden" value={p.name} {...form.register("program")} />
+
+                      <div className="grid gap-4">
+                        <div>
+                          <Label htmlFor="fullName">Nombre completo</Label>
+                          <Input
+                            id="fullName"
+                            placeholder="Nombre completo"
+                            {...form.register("fullName", { required: "Este campo es obligatorio" })}
+                          />
+                          {form.formState.errors.fullName && (
+                            <p className="mt-1 text-sm text-destructive">{form.formState.errors.fullName.message}</p>
+                          )}
+                        </div>
+
+                        <div>
+                          <Label htmlFor="email">Email</Label>
+                          <Input
+                            id="email"
+                            type="email"
+                            placeholder="correo@ejemplo.com"
+                            {...form.register("email", {
+                              required: "Este campo es obligatorio",
+                              pattern: { value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: "Ingresa un email válido" },
+                            })}
+                          />
+                          {form.formState.errors.email && (
+                            <p className="mt-1 text-sm text-destructive">{form.formState.errors.email.message}</p>
+                          )}
+                        </div>
+
+                        <div>
+                          <Label htmlFor="phone">Teléfono</Label>
+                          <Input
+                            id="phone"
+                            type="tel"
+                            placeholder="+56 9 1234 5678"
+                            {...form.register("phone", { required: "Este campo es obligatorio" })}
+                          />
+                          {form.formState.errors.phone && (
+                            <p className="mt-1 text-sm text-destructive">{form.formState.errors.phone.message}</p>
+                          )}
+                        </div>
+
+                        <div>
+                          <Label htmlFor="degree">Grado académico</Label>
+                          <Input
+                            id="degree"
+                            placeholder="Pregrado, Titulado, Especialista, etc."
+                            {...form.register("degree", { required: "Este campo es obligatorio" })}
+                          />
+                          {form.formState.errors.degree && (
+                            <p className="mt-1 text-sm text-destructive">{form.formState.errors.degree.message}</p>
+                          )}
+                        </div>
+
+                        <div>
+                          <Label htmlFor="motivation">¿Por qué quieres postular?</Label>
+                          <Textarea
+                            id="motivation"
+                            placeholder="Cuéntanos brevemente tu interés y objetivos"
+                            {...form.register("motivation", { required: "Este campo es obligatorio" })}
+                          />
+                          {form.formState.errors.motivation && (
+                            <p className="mt-1 text-sm text-destructive">{form.formState.errors.motivation.message}</p>
+                          )}
+                        </div>
+                      </div>
+
+                      <div className="flex flex-col gap-2 sm:flex-row sm:justify-end">
+                        <DialogClose asChild>
+                          <button
+                            type="button"
+                            className="inline-flex h-10 items-center justify-center rounded-md border border-border px-4 py-2 text-sm font-medium hover:bg-secondary"
+                          >
+                            Cancelar
+                          </button>
+                        </DialogClose>
+                        <button
+                          type="submit"
+                          className="inline-flex h-10 items-center justify-center rounded-md bg-usm-red px-4 py-2 text-sm font-medium text-white hover:brightness-110"
+                        >
+                          Enviar postulación
+                        </button>
+                      </div>
+                    </form>
+                  )}
+                </DialogContent>
+              </Dialog>
               <Link
                 to="/becas"
                 className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-full border border-border px-5 py-3 text-sm font-medium hover:bg-secondary transition"
