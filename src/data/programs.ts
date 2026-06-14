@@ -54,7 +54,7 @@ export const programs: Program[] = [
       { label: "Resultados", date: "05 Ene 2027" },
       { label: "Matrícula", date: "10 - 24 Ene 2027" },
     ],
-    faq: [{ q: "¿Hay modalidad online?", a: "No, este programa es 100% presencial en Valparaíso." }],  // FALTA
+    faq: [{ q: "¿Hay modalidad online?", a: "Si, contamos con modalidad hibrida sincronica (Presensial/online)." }],  // FALTA
     testimonial: {  // FALTA
       name: "María Soto",
       role: "Gerente de Operaciones, CCU",
