@@ -45,13 +45,13 @@ function Home() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 pt-16 pb-24 sm:pt-24 sm:pb-32">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1 text-xs text-muted-foreground shadow-[var(--shadow-card)]">
-              <Sparkles className="size-3.5 text-usm-red" />
-              Admisión 2026 abierta · más de 40 programas
+              <Sparkles className="size-3.5 text-primary" />
+              | Admisión 2026 abierta · más de 40 programas
             </div>
             <h1 className="mt-6 text-4xl sm:text-6xl lg:text-7xl font-semibold tracking-tight text-foreground leading-[1.05]">
               Tu próximo paso académico,{" "}
               <span className="relative inline-block">
-                <span className="bg-gradient-to-r from-usm-navy to-usm-red bg-clip-text text-transparent">
+                <span className="text-primary">
                   con claridad.
                 </span>
               </span>
@@ -63,7 +63,7 @@ function Home() {
 
             {/* Search */}
             <div className="mt-8 flex flex-col sm:flex-row gap-3 max-w-2xl">
-              <div className="flex-1 flex items-center gap-3 rounded-full border border-border bg-card px-5 py-3 shadow-[var(--shadow-card)] focus-within:ring-2 focus-within:ring-usm-red/30">
+              <div className="flex-1 flex items-center gap-3 rounded-full border border-border bg-card px-5 py-3 shadow-[var(--shadow-card)] focus-within:ring-2 focus-within:ring-primary/30">
                 <Search className="size-4 text-muted-foreground" />
                 <input
                   value={q}
@@ -75,7 +75,7 @@ function Home() {
               </div>
               <Link
                 to="/programas"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-foreground text-background px-6 py-3 text-sm font-medium hover:bg-usm-navy transition"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-foreground text-background px-6 py-3 text-sm font-medium hover:bg-primary hover:text-primary-foreground transition"
               >
                 Ver todos los programas
                 <ArrowRight className="size-4" />
@@ -90,7 +90,7 @@ function Home() {
                   className={
                     "rounded-full border px-3 py-1.5 text-xs transition " +
                     (filter === f
-                      ? "bg-usm-navy text-white border-usm-navy"
+                      ? "bg-primary text-primary-foreground border-primary"
                       : "bg-card border-border text-muted-foreground hover:text-foreground")
                   }
                 >
@@ -109,7 +109,7 @@ function Home() {
               { icon: Building2, n: "3 sedes", l: "+ modalidad online" },
             ].map((s) => (
               <div key={s.l} className="rounded-xl border border-border bg-card/60 p-5 backdrop-blur">
-                <s.icon className="size-5 text-usm-red" />
+                <s.icon className="size-5 text-primary" />
                 <div className="mt-3 text-2xl font-semibold">{s.n}</div>
                 <div className="text-xs text-muted-foreground">{s.l}</div>
               </div>
@@ -122,12 +122,12 @@ function Home() {
       <section className="mx-auto max-w-7xl px-4 sm:px-6 py-20">
         <div className="flex items-end justify-between mb-10">
           <div>
-            <div className="text-xs uppercase tracking-wider text-usm-red font-medium">Programas destacados</div>
+            <div className="text-xs uppercase tracking-wider text-primary font-medium">Programas destacados</div>
             <h2 className="mt-2 text-3xl sm:text-4xl font-semibold tracking-tight">
               Diseñados para profesionales que avanzan.
             </h2>
           </div>
-          <Link to="/programas" className="hidden sm:inline-flex items-center gap-1 text-sm font-medium hover:text-usm-red">
+          <Link to="/programas" className="hidden sm:inline-flex items-center gap-1 text-sm font-medium hover:text-primary">
             Ver todos <ArrowRight className="size-4" />
           </Link>
         </div>
@@ -140,12 +140,12 @@ function Home() {
       </section>
 
       {/* WHY USM */}
-      <section className="bg-usm-navy text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_30%_20%,oklch(0.55_0.22_27/0.4),transparent_50%)]" />
+      <section className="bg-primary text-primary-foreground relative overflow-hidden">
+        <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_30%_20%,var(--secondary),transparent_50%)]" />
         <div className="mx-auto max-w-7xl px-4 sm:px-6 py-24 relative">
           <div className="max-w-2xl">
-            <div className="text-xs uppercase tracking-wider text-usm-yellow font-medium">Por qué la USM</div>
-            <h2 className="mt-2 text-3xl sm:text-5xl font-semibold tracking-tight">
+            <div className="text-xs uppercase tracking-wider text-secondary font-medium">Por qué la USM</div>
+            <h2 className="mt-2 text-3xl sm:text-5xl font-semibold tracking-tight text-white">
               Rigor técnico. Visión global. Impacto profesional.
             </h2>
             <p className="mt-5 text-white/70 text-lg">
@@ -161,8 +161,8 @@ function Home() {
               { t: "Profesores referentes", d: "Investigadores activos y ejecutivos en empresas líderes." },
               { t: "Red profesional", d: "Más de 60.000 egresados USM en posiciones clave en LATAM." },
             ].map((c) => (
-              <div key={c.t} className="bg-usm-navy p-8">
-                <div className="text-lg font-semibold">{c.t}</div>
+              <div key={c.t} className="bg-primary p-8">
+                <div className="text-lg font-semibold text-white">{c.t}</div>
                 <div className="mt-2 text-sm text-white/70">{c.d}</div>
               </div>
             ))}
@@ -172,7 +172,7 @@ function Home() {
 
       {/* CTA */}
       <section className="mx-auto max-w-7xl px-4 sm:px-6 py-24">
-        <div className="rounded-3xl border border-border bg-gradient-to-br from-card to-secondary p-10 sm:p-16 text-center shadow-[var(--shadow-card)]">
+        <div className="rounded-3xl border border-border bg-gradient-to-br from-card to-secondary/10 p-10 sm:p-16 text-center shadow-[var(--shadow-card)]">
           <h2 className="text-3xl sm:text-5xl font-semibold tracking-tight max-w-2xl mx-auto">
             Empieza tu postulación hoy.
           </h2>
@@ -180,10 +180,10 @@ function Home() {
             Encuentra el programa adecuado y completa tu postulación en menos de 10 minutos.
           </p>
           <div className="mt-8 flex flex-wrap gap-3 justify-center">
-            <Link to="/programas" className="inline-flex items-center gap-2 rounded-full bg-usm-red px-6 py-3 text-sm font-medium text-white shadow-[var(--shadow-glow)] hover:brightness-110 transition">
+            <Link to="/programas" className="inline-flex items-center gap-2 rounded-full bg-secondary px-6 py-3 text-sm font-medium text-secondary-foreground shadow-[var(--shadow-glow)] hover:brightness-90 transition">
               Postula aquí <ArrowRight className="size-4" />
             </Link>
-            <Link to="/becas" className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-6 py-3 text-sm font-medium hover:bg-secondary transition">
+            <Link to="/becas" className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-6 py-3 text-sm font-medium hover:bg-secondary/20 transition">
               Simular financiamiento
             </Link>
           </div>

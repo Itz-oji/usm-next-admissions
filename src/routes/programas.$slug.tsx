@@ -29,7 +29,7 @@ export const Route = createFileRoute("/programas/$slug")({
   notFoundComponent: () => (
     <div className="mx-auto max-w-3xl py-32 px-6 text-center">
       <h1 className="text-3xl font-semibold">Programa no encontrado</h1>
-      <Link to="/programas" className="mt-6 inline-flex items-center gap-2 text-usm-red">
+      <Link to="/programas" className="mt-6 inline-flex items-center gap-2 text-primary">
         <ArrowLeft className="size-4" /> Volver al catálogo
       </Link>
     </div>
@@ -127,7 +127,7 @@ function ProgramDetail() {
                 <DialogTrigger asChild>
                   <button
                     type="button"
-                    className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-usm-red px-5 py-3 text-sm font-medium text-white shadow-[var(--shadow-glow)] hover:brightness-110 transition"
+                    className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-secondary px-5 py-3 text-sm font-medium text-secondary-foreground shadow-[var(--shadow-glow)] hover:brightness-90 transition"
                   >
                     Postula aquí
                   </button>
@@ -235,7 +235,7 @@ function ProgramDetail() {
                         </DialogClose>
                         <button
                           type="submit"
-                          className="inline-flex h-10 items-center justify-center rounded-md bg-usm-red px-4 py-2 text-sm font-medium text-white hover:brightness-110"
+                          className="inline-flex h-10 items-center justify-center rounded-md bg-secondary px-4 py-2 text-sm font-medium text-secondary-foreground hover:brightness-90"
                         >
                           Enviar postulación
                         </button>
@@ -264,7 +264,7 @@ function ProgramDetail() {
         <Section title="Campo laboral">
           <div className="flex flex-wrap gap-2">
             {p.career.map((c) => (
-              <span key={c} className="rounded-full bg-secondary px-4 py-2 text-sm">{c}</span>
+              <span key={c} className="rounded-full bg-primary text-primary-foreground px-4 py-2 text-sm">{c}</span>
             ))}
           </div>
         </Section>
@@ -277,7 +277,7 @@ function ProgramDetail() {
           <div className="grid sm:grid-cols-2 gap-4">
             {p.curriculum.map((s) => (
               <div key={s.semester} className="rounded-xl border border-border p-5 bg-card">
-                <div className="text-xs uppercase tracking-wider text-usm-red font-medium">{s.semester}</div>
+                <div className="text-xs uppercase tracking-wider text-primary font-medium">{s.semester}</div>
                 <ul className="mt-3 space-y-2">
                   {s.courses.map((c) => (
                     <li key={c} className="flex items-center gap-2 text-sm">
@@ -294,7 +294,7 @@ function ProgramDetail() {
           <ul className="grid sm:grid-cols-2 gap-3">
             {p.requirements.map((r) => (
               <li key={r} className="flex items-start gap-2 text-sm">
-                <CheckCircle2 className="size-4 text-usm-red mt-0.5 shrink-0" />
+                <CheckCircle2 className="size-4 text-primary mt-0.5 shrink-0" />
                 {r}
               </li>
             ))}
@@ -305,7 +305,7 @@ function ProgramDetail() {
           <ol className="relative border-l border-border ml-2">
             {p.dates.map((d) => (
               <li key={d.label} className="mb-5 ml-6">
-                <span className="absolute -left-1.5 mt-1.5 size-3 rounded-full bg-usm-red" />
+                <span className="absolute -left-1.5 mt-1.5 size-3 rounded-full bg-primary" />
                 <div className="text-sm font-medium">{d.label}</div>
                 <div className="text-xs text-muted-foreground flex items-center gap-1">
                   <Calendar className="size-3" /> {d.date}
@@ -330,7 +330,7 @@ function ProgramDetail() {
               <details key={f.q} className="group py-5">
                 <summary className="flex cursor-pointer items-center justify-between gap-4 text-base font-medium">
                   {f.q}
-                  <span className="text-usm-red group-open:rotate-45 transition">+</span>
+                  <span className="text-primary group-open:rotate-45 transition">+</span>
                 </summary>
                 <p className="mt-3 text-muted-foreground">{f.a}</p>
               </details>
@@ -348,7 +348,7 @@ function Pill({ children }: { children: React.ReactNode }) {
 function Stat({ icon: I, v, l }: { icon: React.ElementType; v: string; l: string }) {
   return (
     <div>
-      <I className="size-4 text-usm-red" />
+      <I className="size-4 text-primary" />
       <div className="mt-2 text-base font-semibold">{v}</div>
       <div className="text-xs text-muted-foreground">{l}</div>
     </div>

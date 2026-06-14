@@ -20,7 +20,7 @@ function Contacto() {
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 py-12 sm:py-20 grid gap-14 lg:grid-cols-2">
       <div>
-        <div className="text-xs uppercase tracking-wider text-usm-red font-medium">Contacto</div>
+        <div className="text-xs uppercase tracking-wider text-primary font-medium">Contacto</div>
         <h1 className="mt-2 text-4xl sm:text-5xl font-semibold tracking-tight">
           Hablemos de tu próximo paso.
         </h1>
@@ -36,7 +36,7 @@ function Contacto() {
           ].map((c) => (
             <div key={c.k} className="flex items-start gap-4">
               <div className="size-10 rounded-lg bg-primary-soft grid place-items-center shrink-0">
-                <c.icon className="size-5 text-usm-navy" />
+                <c.icon className="size-5 text-primary" />
               </div>
               <div>
                 <div className="text-xs uppercase tracking-wider text-muted-foreground">{c.k}</div>
@@ -68,10 +68,10 @@ function Contacto() {
                 <textarea
                   required
                   rows={4}
-                  className="w-full rounded-lg border border-border bg-background px-4 py-2.5 text-sm outline-none focus:ring-2 focus:ring-usm-red/30"
+                  className="w-full rounded-lg border border-border bg-background px-4 py-2.5 text-sm outline-none focus:ring-2 focus:ring-primary/30"
                 />
               </div>
-              <button className="mt-2 inline-flex items-center justify-center rounded-full bg-usm-red px-6 py-3 text-sm font-medium text-white shadow-[var(--shadow-glow)] hover:brightness-110 transition">
+              <button className="mt-2 inline-flex items-center justify-center rounded-full bg-secondary px-6 py-3 text-sm font-medium text-secondary-foreground shadow-[var(--shadow-glow)] hover:brightness-90 transition">
                 Enviar consulta
               </button>
             </div>
@@ -89,7 +89,7 @@ function Field({ label, type, required }: { label: string; type: string; require
       <input
         type={type}
         required={required}
-        className="w-full rounded-lg border border-border bg-background px-4 py-2.5 text-sm outline-none focus:ring-2 focus:ring-usm-red/30"
+        className="w-full rounded-lg border border-border bg-background px-4 py-2.5 text-sm outline-none focus:ring-2 focus:ring-primary/30"
       />
     </div>
   );

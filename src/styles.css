@@ -64,8 +64,8 @@
 }
 
 :root {
-  --navbar-blue: #005e90;
-  --footer-blue: #004a72;
+  --navbar-blue: #005B8C;
+  --footer-blue: #003b5c;
   --radius: 0.875rem;
   --background: oklch(0.995 0.002 250);
   --foreground: oklch(0.18 0.04 260);
@@ -73,11 +73,11 @@
   --card-foreground: oklch(0.18 0.04 260);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.18 0.04 260);
-  --primary: oklch(0.26 0.08 260);
+  --primary: oklch(0.44 0.13 245);
   --primary-foreground: oklch(0.985 0.003 250);
   --primary-soft: oklch(0.95 0.03 260);
-  --secondary: oklch(0.965 0.008 250);
-  --secondary-foreground: oklch(0.26 0.08 260);
+  --secondary: oklch(0.83 0.18 85);
+  --secondary-foreground: oklch(0.15 0.04 260);
   --muted: oklch(0.965 0.008 250);
   --muted-foreground: oklch(0.5 0.02 260);
   --accent: oklch(0.93 0.05 90);

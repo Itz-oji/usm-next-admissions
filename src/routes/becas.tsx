@@ -36,7 +36,7 @@ function Page() {
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 py-12 sm:py-16">
       <div className="max-w-3xl">
-        <div className="text-xs uppercase tracking-wider text-usm-red font-medium">Inversión</div>
+        <div className="text-xs uppercase tracking-wider text-primary font-medium">Inversión</div>
         <h1 className="mt-2 text-4xl sm:text-5xl font-semibold tracking-tight">
           Becas, descuentos y financiamiento.
         </h1>
@@ -52,9 +52,9 @@ function Page() {
             <div key={s.name} className="rounded-2xl border border-border bg-card p-6 shadow-[var(--shadow-card)]">
               <div className="flex items-center justify-between">
                 <div className="size-10 rounded-lg bg-primary-soft grid place-items-center">
-                  <s.icon className="size-5 text-usm-navy" />
+                  <s.icon className="size-5 text-primary" />
                 </div>
-                <span className="text-sm font-semibold text-usm-red">{s.pct}</span>
+                <span className="text-sm font-semibold text-primary">{s.pct}</span>
               </div>
               <div className="mt-4 font-semibold">{s.name}</div>
               <div className="mt-1 text-sm text-muted-foreground">{s.desc}</div>
@@ -63,8 +63,8 @@ function Page() {
         </div>
 
         {/* Calculator */}
-        <div className="rounded-3xl bg-usm-navy text-white p-8 shadow-[var(--shadow-elevated)] h-fit lg:sticky lg:top-24">
-          <div className="flex items-center gap-2 text-xs uppercase tracking-wider text-usm-yellow">
+        <div className="rounded-3xl bg-primary text-white p-8 shadow-[var(--shadow-elevated)] h-fit lg:sticky lg:top-24">
+          <div className="flex items-center gap-2 text-xs uppercase tracking-wider text-secondary">
             <Banknote className="size-4" /> Simulador
           </div>
           <h2 className="mt-2 text-2xl font-semibold">Calcula tu inversión</h2>
@@ -81,7 +81,7 @@ function Page() {
             <Row k="Cuota mensual" v={formatCLP(result.monthly)} bold />
           </div>
 
-          <Link to="/contacto" className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-usm-red px-5 py-3 text-sm font-medium hover:brightness-110 transition">
+          <Link to="/contacto" className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-secondary px-5 py-3 text-sm font-medium text-secondary-foreground shadow-[var(--shadow-glow)] hover:brightness-90 transition">
             Hablar con admisión
           </Link>
         </div>
@@ -98,7 +98,7 @@ function Page() {
             { n: "04", t: "Comprobante", d: "Acceso digital a tu estado de cuenta 24/7." },
           ].map((s) => (
             <div key={s.n} className="rounded-xl border border-border p-6 bg-card">
-              <div className="text-xs text-usm-red font-mono">{s.n}</div>
+              <div className="text-xs text-primary font-mono">{s.n}</div>
               <div className="mt-2 font-semibold">{s.t}</div>
               <div className="mt-1 text-sm text-muted-foreground">{s.d}</div>
             </div>
@@ -125,7 +125,7 @@ function Slider({
         step={step}
         value={value}
         onChange={(e) => onChange(Number(e.target.value))}
-        className="mt-2 w-full accent-usm-red"
+        className="mt-2 w-full accent-secondary"
         aria-label={label}
       />
     </div>
@@ -136,7 +136,7 @@ function Row({ k, v, bold, accent }: { k: string; v: string; bold?: boolean; acc
   return (
     <div className="flex items-center justify-between">
       <span className="text-white/60">{k}</span>
-      <span className={(bold ? "font-semibold " : "") + (accent ? "text-usm-yellow" : "text-white")}>{v}</span>
+      <span className={(bold ? "font-semibold " : "") + (accent ? "text-secondary" : "text-white")}>{v}</span>
     </div>
   );
 }

@@ -40,7 +40,7 @@ function ProgramsPage() {
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 py-12 sm:py-16">
       <div className="max-w-3xl">
-        <div className="text-xs uppercase tracking-wider text-usm-red font-medium">Catálogo 2026</div>
+        <div className="text-xs uppercase tracking-wider text-primary font-medium">Catálogo 2026</div>
         <h1 className="mt-2 text-4xl sm:text-5xl font-semibold tracking-tight">Programas USM</h1>
         <p className="mt-3 text-muted-foreground text-lg">
           {filtered.length} programas disponibles. Filtra y encuentra el tuyo.
@@ -115,7 +115,7 @@ function FilterGroup({
             className={
               "rounded-full px-3 py-1.5 text-xs transition border " +
               (value === o
-                ? "bg-usm-navy text-white border-usm-navy"
+                ? "bg-primary text-primary-foreground border-primary"
                 : "bg-card border-border text-muted-foreground hover:text-foreground")
             }
           >

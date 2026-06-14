@@ -65,7 +65,7 @@ export function Navbar() {
         <div className="flex items-center gap-2">
           <Link
             to="/programas"
-            className="hidden sm:inline-flex h-9 items-center justify-center rounded-full bg-usm-red px-4 text-sm font-medium text-white shadow-[var(--shadow-glow)] hover:brightness-110 transition"
+            className="hidden sm:inline-flex h-9 items-center justify-center rounded-full bg-secondary px-4 text-sm font-medium text-secondary-foreground shadow-[var(--shadow-glow)] hover:brightness-90 transition"
           >
             Postula aquí
           </Link>
@@ -94,7 +94,7 @@ export function Navbar() {
             ))}
             <Link
               to="/programas"
-              className="mt-3 inline-flex h-10 items-center justify-center rounded-full bg-usm-red px-4 text-sm font-medium text-white"
+              className="mt-3 inline-flex h-10 items-center justify-center rounded-full bg-secondary px-4 text-sm font-medium text-secondary-foreground hover:brightness-90 transition"
             >
               Postula aquí
             </Link>
