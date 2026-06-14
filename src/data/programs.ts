@@ -8,6 +8,7 @@ export type Program = {
   schedule: string;
   campus: "Casa Central" | "San Joaquín" | "Vitacura" | "Online" | "Vitacura o Casa Central" | "Internacional";
   tuition: number; // CLP total
+  matricula: number;
   accreditation: string;
   employability: number; // %
   shortDesc: string;
@@ -32,6 +33,7 @@ export const programs: Program[] = [
     schedule: "Weekend",
     campus: "Vitacura",
     tuition: 14300000,
+    matricula: 123000,
     accreditation: "Acreditado CNA 5 años",
     employability: 94, // FALTA
     shortDesc: "Optimización, gestión y analítica para industrias de clase mundial.",  // FALTA
@@ -47,10 +49,10 @@ export const programs: Program[] = [
     ],
     requirements: ["Experiencia profesional mínima de 2 años", "Grado de Licenciado", "CV actualizado", "CI vigente por ambos lados", "Certificado de notas", "Certificado de Título", "Carta motivación", "2 Cartas de recomendación (formato USM)"],
     dates: [  // FALTA
-      { label: "Apertura postulaciones", date: "01 Sep 2025" },
-      { label: "Cierre postulaciones", date: "15 Dic 2025" },
-      { label: "Resultados", date: "05 Ene 2026" },
-      { label: "Matrícula", date: "10 - 24 Ene 2026" },
+      { label: "Apertura postulaciones", date: "01 Sep 2026" },
+      { label: "Cierre postulaciones", date: "15 Dic 2026" },
+      { label: "Resultados", date: "05 Ene 2027" },
+      { label: "Matrícula", date: "10 - 24 Ene 2027" },
     ],
     faq: [{ q: "¿Hay modalidad online?", a: "No, este programa es 100% presencial en Valparaíso." }],  // FALTA
     testimonial: {  // FALTA
@@ -69,6 +71,7 @@ export const programs: Program[] = [
     schedule: "Weekend",
     campus: "Vitacura",
     tuition: 15000000,
+    matricula: 130000,
     accreditation: "Acreditado CNA 5 años",
     employability: 93, // FALTA
     shortDesc: "Economía aplicada al sector energético con foco en políticas públicas y proyectos sustentables.", // FALTA
@@ -107,6 +110,7 @@ export const programs: Program[] = [
     schedule: "Weekend",
     campus: "Vitacura",
     tuition: 18180000,
+    matricula: 134000,
     accreditation: "Acreditado CNA 4 años",
     employability: 92,
     shortDesc: "Gestiona activos industriales con técnicas avanzadas de mantenimiento y confiabilidad.",  // FALTA
@@ -146,6 +150,7 @@ export const programs: Program[] = [
     schedule: "Weekend",
     campus: "Vitacura",
     tuition: 14610000,
+    matricula: 120000,
     accreditation: "Acreditado CNA 6 años",
     employability: 94, //FALTA
     shortDesc: "Aborda la gobernanza, gestión y tecnología del agua con perspectiva global.", // FALTA
@@ -184,6 +189,7 @@ export const programs: Program[] = [
     schedule: "Weekend",
     campus: "Vitacura o Casa Central",
     tuition: 17100000,
+    matricula: 130000,
     accreditation: "Acreditado AMBA · CNA 5 años",
     employability: 97, //FALTA
     shortDesc: "Desarrolla habilidades de liderazgo y gestión con enfoque internacional.", //FALTA
@@ -221,6 +227,7 @@ export const programs: Program[] = [
     schedule: "Weekend",
     campus: "San Joaquín",
     tuition: 13450000,
+    matricula: 130000,
     accreditation: "Acreditado CNA 4 años",
     employability: 95, //FALTA
     shortDesc: "Domina arquitecturas digitales, seguridad y gestión de datos empresariales.", //FALTA
@@ -257,6 +264,7 @@ export const programs: Program[] = [
     schedule: "Vespertino",
     campus: "Casa Central",
     tuition: 14220000,
+    matricula: 130000,
     accreditation: "Acreditado CNA 6 años",
     employability: 93, //FALTA
     shortDesc: "Profundiza en investigación y técnicas avanzadas de ingeniería civil.", //FALTA
@@ -294,6 +302,7 @@ export const programs: Program[] = [
     schedule: "Vespertino",
     campus: "Casa Central",
     tuition: 10800000,
+    matricula: 130000,
     accreditation: "Acreditado CNA 5 años",
     employability: 94,
     shortDesc: "Investigación avanzada en sistemas eléctricos, potencia y control.",
@@ -331,6 +340,7 @@ export const programs: Program[] = [
     schedule: "Vespertino",
     campus: "Casa Central",
     tuition: 10800000,
+    matricula: 130000,
     accreditation: "Acreditado CNA 5 años",
     employability: 94,
     shortDesc: "Investigación en electrónica y sistemas embebidos con aplicaciones industriales.",
@@ -368,6 +378,7 @@ export const programs: Program[] = [
     schedule: "Vespertino",
     campus: "Casa Central",
     tuition: 10800000,
+    matricula: 130000,
     accreditation: "Acreditado CNA 5 años",
     employability: 93,
     shortDesc: "Estudios avanzados en investigación industrial y análisis de sistemas productivos.",
@@ -405,6 +416,7 @@ export const programs: Program[] = [
     schedule: "Vespertino",
     campus: "Vitacura",
     tuition: 11000000,
+    matricula: 130000,
     accreditation: "Acreditado CNA 5 años",
     employability: 96,
     shortDesc: "Investigación en software, inteligencia artificial y sistemas inteligentes.",
@@ -442,6 +454,7 @@ export const programs: Program[] = [
     schedule: "Vespertino",
     campus: "Casa Central",
     tuition: 10800000,
+    matricula: 130000,
     accreditation: "Acreditado CNA 5 años",
     employability: 93,
     shortDesc: "Investigación en diseño mecánico, dinámica y manufactura avanzada.",
@@ -479,6 +492,7 @@ export const programs: Program[] = [
     schedule: "Vespertino",
     campus: "Casa Central",
     tuition: 11000000,
+    matricula: 130000,
     accreditation: "Acreditado CNA 5 años",
     employability: 92,
     shortDesc: "Ciencia aplicada a procesos metalúrgicos y mineros con enfoque en innovación.",
@@ -516,6 +530,7 @@ export const programs: Program[] = [
     schedule: "Vespertino",
     campus: "Casa Central",
     tuition: 10800000,
+    matricula: 130000,
     accreditation: "Acreditado CNA 5 años",
     employability: 93,
     shortDesc: "Investigación en procesos químicos y desarrollo de materiales avanzados.",
@@ -553,6 +568,7 @@ export const programs: Program[] = [
     schedule: "Vespertino",
     campus: "Casa Central",
     tuition: 10600000,
+    matricula: 130000,
     accreditation: "Acreditado CNA 5 años",
     employability: 91,
     shortDesc: "Estudios científicos avanzados en física aplicada y modelación matemática.",
@@ -590,6 +606,7 @@ export const programs: Program[] = [
     schedule: "Vespertino",
     campus: "Casa Central",
     tuition: 10600000,
+    matricula: 130000,
     accreditation: "Acreditado CNA 5 años",
     employability: 92,
     shortDesc: "Investigación matemática avanzada aplicada a problemas reales y modelación.",
@@ -627,6 +644,7 @@ export const programs: Program[] = [
     schedule: "Vespertino",
     campus: "Casa Central",
     tuition: 10800000,
+    matricula: 130000,
     accreditation: "Acreditado CNA 5 años",
     employability: 92,
     shortDesc: "Ciencia de materiales y procesos químicos con enfoque en investigación aplicada.",
@@ -664,6 +682,7 @@ export const programs: Program[] = [
     schedule: "Vespertino",
     campus: "Casa Central",
     tuition: 10600000,
+    matricula: 130000,
     accreditation: "Acreditado CNA 5 años",
     employability: 90,
     shortDesc: "Rehabilita edificios con criterios de sostenibilidad y tecnología aplicada.",
@@ -701,6 +720,7 @@ export const programs: Program[] = [
     schedule: "Vespertino",
     campus: "Casa Central",
     tuition: 14500000,
+    matricula: 130000,
     accreditation: "Acreditado CNA 5 años",
     employability: 93,
     shortDesc: "Investigación doctoral en biotecnología para innovación en salud y medio ambiente.",
@@ -741,6 +761,7 @@ export const programs: Program[] = [
     schedule: "Vespertino",
     campus: "Casa Central",
     tuition: 14200000,
+    matricula: 130000,
     accreditation: "Acreditado CNA 5 años",
     employability: 92,
     shortDesc: "Investigación avanzada en física fundamental y aplicada.",
@@ -781,6 +802,7 @@ export const programs: Program[] = [
     schedule: "Vespertino",
     campus: "Casa Central",
     tuition: 14400000,
+    matricula: 130000,
     accreditation: "Acreditado CNA 5 años",
     employability: 92,
     shortDesc: "Investigación doctoral en química avanzada y materiales funcionales.",
@@ -821,6 +843,7 @@ export const programs: Program[] = [
     schedule: "Vespertino",
     campus: "Vitacura",
     tuition: 14600000,
+    matricula: 130000,
     accreditation: "Acreditado CNA 5 años",
     employability: 94,
     shortDesc: "Investigación doctoral centrada en soluciones tecnológicas y aplicaciones industriales.",
@@ -861,6 +884,7 @@ export const programs: Program[] = [
     schedule: "Vespertino",
     campus: "Casa Central",
     tuition: 14500000,
+    matricula: 130000,
     accreditation: "Acreditado CNA 5 años",
     employability: 93,
     shortDesc: "Investigación en sistemas eléctricos, energía avanzada y control de potencia.",
@@ -901,6 +925,7 @@ export const programs: Program[] = [
     schedule: "Vespertino",
     campus: "Casa Central",
     tuition: 14500000,
+    matricula: 130000,
     accreditation: "Acreditado CNA 5 años",
     employability: 94,
     shortDesc: "Investigación doctoral en electrónica, sistemas embebidos y sensores inteligentes.",
@@ -941,6 +966,7 @@ export const programs: Program[] = [
     schedule: "Vespertino",
     campus: "Vitacura",
     tuition: 14700000,
+    matricula: 130000,
     accreditation: "Acreditado CNA 5 años",
     employability: 95,
     shortDesc: "Investigación avanzada en ciencias de la computación, IA y sistemas inteligentes.",
@@ -981,6 +1007,7 @@ export const programs: Program[] = [
     schedule: "Vespertino",
     campus: "Casa Central",
     tuition: 14500000,
+    matricula: 130000,
     accreditation: "Acreditado CNA 5 años",
     employability: 93,
     shortDesc: "Investigación doctoral en sistemas mecánicos, manufactura avanzada y robótica.",
@@ -1021,6 +1048,7 @@ export const programs: Program[] = [
     schedule: "Vespertino",
     campus: "Vitacura",
     tuition: 14600000,
+    matricula: 130000,
     accreditation: "Acreditado CNA 5 años",
     employability: 94,
     shortDesc: "Investigación doctoral en ingeniería con foco en soluciones sostenibles.",
@@ -1061,6 +1089,7 @@ export const programs: Program[] = [
     schedule: "Vespertino",
     campus: "Vitacura",
     tuition: 14800000,
+    matricula: 130000,
     accreditation: "Acreditado CNA 5 años",
     employability: 96,
     shortDesc: "Investigación doctoral en aprendizaje automático, visión y sistemas inteligentes.",
@@ -1101,6 +1130,7 @@ export const programs: Program[] = [
     schedule: "Vespertino",
     campus: "Casa Central",
     tuition: 14300000,
+    matricula: 130000,
     accreditation: "Acreditado CNA 5 años",
     employability: 92,
     shortDesc: "Investigación matemática avanzada con aplicaciones en ciencia y tecnología.",

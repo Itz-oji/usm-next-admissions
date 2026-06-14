@@ -111,9 +111,18 @@ function ProgramDetail() {
 
             {/* Sticky CTA */}
             <aside className="lg:sticky lg:top-24 h-fit rounded-2xl border border-border bg-card p-6 shadow-[var(--shadow-elevated)]">
-              <div className="text-xs text-muted-foreground">Arancel total</div>
-              <div className="text-3xl font-semibold text-foreground">{formatCLP(p.tuition)}</div>
-              <div className="text-xs text-muted-foreground mt-1">Becas y financiamiento disponibles</div>
+              <div className="text-sm text-muted-foreground">Arancel total</div>
+              <div className="mt-1 text-4xl font-bold text-foreground">{formatCLP(p.tuition)}</div>
+              <div className="my-5 border-t border-border" />
+              <div className="flex items-center gap-2 text-base">
+                <span className="font-medium text-foreground">
+                  Matrícula:
+                </span>
+                <span className="text-muted-foreground">
+                  {formatCLP(p.matricula)}
+                </span>
+              </div>
+              <Link to="/becas" className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-blue-700 hover:text-blue-800 hover:underline">Becas y financiamiento disponibles<span>→</span></Link>
               <Dialog open={open} onOpenChange={setOpen}>
                 <DialogTrigger asChild>
                   <button
