@@ -14,12 +14,12 @@ export const Route = createFileRoute("/fechas")({
 });
 
 const milestones = [
-  { date: "01 Sep 2025", title: "Apertura de postulaciones", desc: "Comienza el periodo oficial para todos los programas de magíster y postgrado." },
-  { date: "01 - 30 Nov 2025", title: "Entrevistas y evaluación", desc: "Coordinación de entrevistas con coordinadores académicos." },
-  { date: "15 Dic 2025", title: "Cierre de postulaciones", desc: "Última fecha para enviar antecedentes y documentación." },
-  { date: "08 Ene 2026", title: "Publicación de resultados", desc: "Recibe respuesta oficial y carta de admisión." },
-  { date: "10 - 30 Ene 2026", title: "Matrícula", desc: "Formaliza tu cupo y accede a opciones de financiamiento." },
-  { date: "10 Mar 2026", title: "Inicio de clases", desc: "Comienza tu programa con la jornada de bienvenida USM." },
+  { date: "01 Sep 2026", title: "Apertura de postulaciones", desc: "Comienza el periodo oficial para todos los programas de magíster y postgrado." },
+  { date: "01 - 30 Nov 2026", title: "Entrevistas y evaluación", desc: "Coordinación de entrevistas con coordinadores académicos." },
+  { date: "15 Dic 2026", title: "Cierre de postulaciones", desc: "Última fecha para enviar antecedentes y documentación." },
+  { date: "08 Ene 2027", title: "Publicación de resultados", desc: "Recibe respuesta oficial y carta de admisión." },
+  { date: "10 - 30 Ene 2027", title: "Matrícula", desc: "Formaliza tu cupo y accede a opciones de financiamiento." },
+  { date: "10 Mar 2027", title: "Inicio de clases", desc: "Comienza tu programa con la jornada de bienvenida USM." },
 ];
 
 function Fechas() {
